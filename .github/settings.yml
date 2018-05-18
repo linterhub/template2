@@ -4,7 +4,7 @@ repository:
   description: repository template for github
 
   # A URL with more information about the repository
-  homepage: https://repometric.com
+  homepage: https://linterhub.com
 
   # Either `true` to enable issues for this repository, `false` to disable them.
   has_issues: true
