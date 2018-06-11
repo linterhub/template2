@@ -1,0 +1,23 @@
+{
+    "src": {
+        "dir": "src"
+    },
+    "doc": {
+        "dir": "doct"
+    },
+    "config": {
+        "dir": "config"
+    },
+    "ext": {
+        "dir": "ext"
+    },
+    "build": {
+        "dir": "build"
+    },
+    "test": {
+        "dir": "test"
+    },
+    "dist": {
+        "dir": "dist"
+    }
+}

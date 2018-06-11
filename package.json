@@ -1,0 +1,86 @@
+{
+    "name": "linterhub.template",
+    "version": "0.0.0-development",
+    "description": "description of repo",
+    "scripts": {
+      "gulp": "./node_modules/gulp/bin/gulp.js",
+      "build": "gulp build",
+      "test": "gulp test",
+      "licensee": "./node_modules/licensee/licensee --errors-only || true",
+      "release": "gulp release",
+      "semantic-release": "semantic-release"
+    },
+    "files": [
+        "dist"
+    ],
+    "release": {
+        "verifyConditions": [
+            "@semantic-release/github",
+            "@semantic-release/npm",
+            "@semantic-release/git"
+            ],
+        "prepare": [
+            "@semantic-release/npm",
+            {
+                "path": "@semantic-release/git",
+                "assets": [ "package.json"]
+            }
+        ],
+        "analyzeCommits": {
+            "releaseRules": [
+                {
+                    "type": "breaking", "release": "major"
+                },
+                {
+                    "type": "feat", "release": "minor"
+                },
+                {
+                    "type": "docs", "scope": ".*md", "release": "patch"
+                },
+                {
+                    "type": "fix", "release": "patch"
+                },
+                {
+                    "type": "perf", "release": "patch"
+                }
+            ],
+            "parserOpts": {
+                "noteKeywords": [
+                    "BREAKING CHANGE",
+                    "BREAKING CHANGES",
+                    "BREAKING"
+                ]
+            }
+        },
+      "publish": [
+        {
+          "path": "@semantic-release/exec",
+          "cmd": "gulp release"
+        },
+        "@semantic-release/npm",
+        {
+          "path": "@semantic-release/github",
+          "assets": [
+            "dist"
+          ]
+        }
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/{organization}/{repo}.git"
+    },
+    "author": "linterhub",
+    "license": "MIT",
+    "homepage": "https://github.com/{organization}/{repo}",
+    "devDependencies": {
+      "gulp": "github:gulpjs/gulp#4.0",
+      "gulp-hub": "^0.8.0",
+      "licensee": "^4.5.0",
+      "semantic-release": "^15.5.1"
+    },
+    "bugs": {
+      "url": "https://github.com/{organization}/{repo}/issues"
+    }
+  }
+  
