@@ -1,10 +1,10 @@
 # Name of project
 
-Short description 
+Short description
 
-> description 
+> description
 
-Long description 
+Long description
 
 ## Table of Contents
 
